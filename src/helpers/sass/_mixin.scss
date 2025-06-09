@@ -58,11 +58,11 @@
 
 // Components
 @mixin headerContainerPadding($padding, $fontSize: null) {
-  header {
-    .container {
-      padding: $padding;
-    }
+  .container {
+    padding: $padding;
+  }
 
+  header {
     @if $fontSize != null {
       nav {
         font-size: $fontSize;

@@ -1,21 +1,21 @@
 include ./variables.pug
 
 mixin links (path)
-  div: a(href= path + "/") الرئيسية
-  div: a(href= path + "/pages/menu.html") القائمة
-  div: a(href= path + "/pages/booking.html") الحجز
-  div: a(href= path + "/pages/galary.html") المعرض
-  div: a(href= path + "/pages/contact-us.html") اتصل بنا
-  div: a(href= path + "/pages/about.html") عن الموقع
+  li: a(href= path + "/") الرئيسية
+  li: a(href= path + "/pages/menu.html") القائمة
+  li: a(href= path + "/pages/booking.html") الحجز
+  li: a(href= path + "/pages/galary.html") المعرض
+  li: a(href= path + "/pages/contact-us.html") اتصل بنا
+  li: a(href= path + "/pages/about.html") عن الموقع
 
 mixin header (path) 
   .logo: a(href= path + "/"): img(src= path + "/imgs/logo.png")
   .dropmenu: div: i.fa-solid.fa-bars(role="button")
   .overlay
     button.close(aria-label="إغلاق القائمة", type="button") X 
-    div.menu
+    ul.menu
       +links(path)
-  nav(aria-label="القائمة الرئيسية")
+  nav(aria-label="القائمة الرئيسية"): ul
     +links(path)
 
 mixin head (title, path)
@@ -31,3 +31,35 @@ mixin head (title, path)
     link(rel="preload", href= path + "/imgs/logo.png", as="image")
     title #{title}
 
+mixin footer (path)
+  .cont
+    .footer-sections
+      section.footer-section
+        h3 عن المطعم
+        p مطعم أرمانيا إيطاليا يقدم لكم أفضل الأطباق الإيطالية المعدة بأجود المكونات الطازجة. تأسس مطعمنا في عام 2002 ومنذ ذلك الوقت ونحن نسعى لتقديم تجربة طعام فريدة ومميزة.
+      section.footer-section
+        h3 روابط سريعة
+        ul
+          +links(path)
+      section.footer-section
+        h3 تابعنا على
+        ul.social-media
+          li: a(href="#"): i.fab.fa-facebook-f
+          li: a(href="#"): i.fab.fa-twitter
+          li: a(href="#"): i.fab.fa-instagram
+          li: a(href="#"): i.fab.fa-linkedin-in
+      section.footer-section
+        h3 معلومات التواصل
+        address 
+          ul
+            li
+              strong العنوان:
+              |  شارع البطل احمد عبدالعزيز، المهندسين، الجيزة
+            li
+              strong رقم الهاتف:
+              |  0103854127
+            li
+              strong البريد الالكتروني:
+              |  armonia-italia@gmail.com
+    .footer-bottom
+      p &copy; 2025 أرمانيا إيطاليا. جميع الحقوق محفوظة.

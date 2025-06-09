@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: "Tajawal", sans-serif;
   font-size: 18px;
@@ -18,6 +24,11 @@ body {
 h2 {
   padding: 0 0 20px;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $white-color;
 }
 
 @include headerContainerPadding(0 100px);
@@ -32,7 +43,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 11;
-  background-color: #fff;
+  background-color: $white-color;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   .container {
     display: flex;
@@ -83,7 +94,7 @@ header {
 
     .close {
       background-color: $red-color;
-      color: #fff;
+      color: $white-color;
       cursor: pointer;
       outline: none;
       border: none;
@@ -101,26 +112,24 @@ header {
     .menu {
       @include center("both");
       text-align: center;
-      div {
+      li {
         padding: 3px;
         a {
           color: $green-color;
-          text-decoration: none;
           font-weight: bold;
         }
       }
     }
   }
 
-  nav {
+  nav ul {
     display: flex;
     gap: 25px;
     font-weight: bold;
     text-align: center;
     font-size: 20px;
-    div a {
+    li a {
       color: $green-color;
-      text-decoration: none;
       @include time;
       &:hover {
         color: $red-color;
@@ -143,4 +152,84 @@ header {
 
 @include breakPoints(lg) {
   @include headerContainerPadding(10px 25px, 16px);
+}
+
+// Footer Styling
+footer {
+  background-color: #333;
+  margin-top: 100px;
+  padding: 50px 0;
+  color: $white-color;
+  font-size: 14px;
+  .cont {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      margin: 20px;
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        line-height: 1.5;
+        text-align: justify;
+      }
+      li {
+        margin-bottom: 10px;
+        a {
+          @include time();
+          &:hover {
+            color: $green-color;
+            @include time();
+          }
+        }
+      }
+      .social-media {
+        li {
+          margin-right: 10px;
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    width: 100%;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@include breakPoints(sm) {
+  footer {
+    padding: 30px 10px;
+    .footer-sections {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+      .footer-section {
+        flex-basis: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+        h3,
+        p,
+        ul,
+        address {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
 }
