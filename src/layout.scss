@@ -45,6 +45,7 @@ header {
   z-index: 11;
   background-color: $white-color;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
   .container {
     display: flex;
     align-items: center;
@@ -112,8 +113,10 @@ header {
     .menu {
       @include center("both");
       text-align: center;
+
       li {
         padding: 3px;
+
         a {
           color: $green-color;
           font-weight: bold;
@@ -128,9 +131,11 @@ header {
     font-weight: bold;
     text-align: center;
     font-size: 20px;
+
     li a {
       color: $green-color;
       @include time;
+
       &:hover {
         color: $red-color;
       }
@@ -140,10 +145,12 @@ header {
 
 @include breakPoints(md) {
   @include headerContainerPadding(25px 50px);
+
   header {
     .dropmenu {
       display: block;
     }
+
     nav {
       display: none;
     }
@@ -154,45 +161,93 @@ header {
   @include headerContainerPadding(10px 25px, 16px);
 }
 
+// main Styling
+main {
+  position: relative;
+  background-image: url(../imgs/main/main3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
+  font-weight: 600;
+
+  p {
+    @include center("y");
+    color: $red-color;
+    font-size: clamp(22px, 4vw, 35px);
+    width: 48%;
+    text-align: justify;
+
+    span {
+      color: $green-color;
+    }
+  }
+
+  @include breakPoints(md) {
+    background-image: url(../imgs/main/main-3.jpg);
+
+    p {
+      text-align: center;
+    }
+  }
+
+  @include breakPoints(sm) {
+    background-image: url(../imgs/main/small.png);
+
+    p {
+      @include center("both");
+      width: 100%;
+    }
+  }
+}
+
 // Footer Styling
 footer {
   background-color: #333;
-  margin-top: 100px;
   padding: 50px 0;
   color: $white-color;
   font-size: 14px;
+
   .cont {
     display: flex;
     flex-direction: column;
   }
+
   .footer-sections {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+
     .footer-section {
       flex: 1;
       min-width: 200px;
       margin: 20px;
+
       h3 {
         font-size: 18px;
       }
+
       p {
         line-height: 1.5;
         text-align: justify;
       }
+
       li {
         margin-bottom: 10px;
+
         a {
           @include time();
+
           &:hover {
             color: $green-color;
             @include time();
           }
         }
       }
+
       .social-media {
         li {
           margin-right: 10px;
+
           a {
             font-size: 18px;
           }
@@ -200,11 +255,13 @@ footer {
       }
     }
   }
+
   .footer-bottom {
     text-align: center;
     border-top: 1px solid #444;
     padding-top: 20px;
     width: 100%;
+
     p {
       margin: 0;
     }
@@ -214,15 +271,18 @@ footer {
 @include breakPoints(sm) {
   footer {
     padding: 30px 10px;
+
     .footer-sections {
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 30px;
+
       .footer-section {
         flex-basis: 100%;
         margin: 0;
         padding-bottom: 20px;
+
         h3,
         p,
         ul,

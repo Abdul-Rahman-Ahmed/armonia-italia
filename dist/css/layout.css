@@ -180,9 +180,57 @@ header nav ul li a:hover {
     font-size: 16px;
   }
 }
+main {
+  position: relative;
+  background-image: url(../imgs/main/main3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
+  font-weight: 600;
+}
+main p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  color: #bf0a30;
+  font-size: clamp(22px, 4vw, 35px);
+  width: 48%;
+  text-align: justify;
+}
+main p span {
+  color: #228b22;
+}
+@media (max-width: 768px) {
+  main {
+    background-image: url(../imgs/main/main-3.jpg);
+  }
+  main p {
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  main {
+    background-image: url(../imgs/main/small.png);
+  }
+  main p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+
 footer {
   background-color: #333;
-  margin-top: 100px;
   padding: 50px 0;
   color: #fff;
   font-size: 14px;
