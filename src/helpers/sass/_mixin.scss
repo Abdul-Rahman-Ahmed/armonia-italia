@@ -1,0 +1,72 @@
+// Breakpoints
+@mixin breakPoints($size) {
+  @if $size == "s" {
+    @media (max-width: 376px) {
+      @content;
+    }
+  } @else if $size == "sm" {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $size == "md" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Positioning
+@mixin center($type) {
+  position: absolute;
+  @if $type == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  } @else if $type == "x" {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  } @else if $type == "y" {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+}
+
+// Utilities
+@mixin time {
+  transition: 0.3s;
+}
+
+// Components
+@mixin headerContainerPadding($padding, $fontSize: null) {
+  header {
+    .container {
+      padding: $padding;
+    }
+
+    @if $fontSize != null {
+      nav {
+        font-size: $fontSize;
+      }
+    }
+  }
+}

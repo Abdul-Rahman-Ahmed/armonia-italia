@@ -1,0 +1,33 @@
+include ./variables.pug
+
+mixin links (path)
+  div: a(href= path + "/") الرئيسية
+  div: a(href= path + "/pages/menu.html") القائمة
+  div: a(href= path + "/pages/booking.html") الحجز
+  div: a(href= path + "/pages/galary.html") المعرض
+  div: a(href= path + "/pages/contact-us.html") اتصل بنا
+  div: a(href= path + "/pages/about.html") عن الموقع
+
+mixin header (path) 
+  .logo: a(href= path + "/"): img(src= path + "/imgs/logo.png")
+  .dropmenu: div: i.fa-solid.fa-bars(role="button")
+  .overlay
+    button.close(aria-label="إغلاق القائمة", type="button") X 
+    div.menu
+      +links(path)
+  nav(aria-label="القائمة الرئيسية")
+    +links(path)
+
+mixin head (title, path)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href= path + "/css/layout.css")
+    link(rel="stylesheet", href= path + "/css/all.min.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap")
+    link(rel="shortcut icon", href= path + "/imgs/logo.png", type="image/x-icon")
+    link(rel="preload", href= path + "/imgs/logo.png", as="image")
+    title #{title}
+

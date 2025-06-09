@@ -1,0 +1,9 @@
+include ./helpers/pug/mixins.pug
+doctype html
+html(lang="ar" dir="rtl")  
+  +head("Armonia Italia", mainPath)
+  body
+    header
+      .container
+        +header(mainPath)
+    script(src="./js/main.js")
