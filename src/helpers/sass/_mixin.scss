@@ -61,12 +61,4 @@
   .container {
     padding: $padding;
   }
-
-  header {
-    @if $fontSize != null {
-      nav {
-        font-size: $fontSize;
-      }
-    }
-  }
 }

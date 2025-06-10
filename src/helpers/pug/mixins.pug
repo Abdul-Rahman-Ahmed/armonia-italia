@@ -34,6 +34,15 @@ mixin head (title, path)
 mixin heading (text)
   h2.head - #{text} -
 
+mixin menu (num, path)
+  +heading("القائمة")
+  ul
+    li.button.active(data-type="appetizers") المقبلات
+    li.button(data-type="main") الأطباق الرئيسية
+    li.button(data-type="pizza") البيتزا
+    li.button(data-type="deserts") الحلويات
+    li.button(data-type="drinks") المشروبات
+  .cards
 mixin footer (path)
   .cont
     .footer-sections

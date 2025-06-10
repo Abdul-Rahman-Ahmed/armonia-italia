@@ -57,11 +57,7 @@ h2.head {
   font-size: 28px;
 }
 
-@include headerContainerPadding(0 100px);
-
-@include breakPoints(lg) {
-  @include headerContainerPadding(37.5px 75px);
-}
+@include headerContainerPadding(50px 100px);
 
 // header
 header {
@@ -76,6 +72,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .logo {
@@ -169,24 +167,6 @@ header {
   }
 }
 
-@include breakPoints(md) {
-  @include headerContainerPadding(25px 50px);
-
-  header {
-    .dropmenu {
-      display: block;
-    }
-
-    nav {
-      display: none;
-    }
-  }
-}
-
-@include breakPoints(lg) {
-  @include headerContainerPadding(10px 25px, 16px);
-}
-
 // main Styling
 main {
   position: relative;
@@ -228,9 +208,6 @@ main {
 
 // About Styling
 .about {
-  padding-top: 50px;
-  padding-bottom: 50px;
-
   .container {
     display: flex;
     align-items: center;
@@ -270,58 +247,60 @@ main {
   }
 }
 
-@include breakPoints(lg) {
-  .about .container .content {
-    .head {
-      font-size: 25px;
-    }
-    .text {
-      font-size: 20px;
-    }
-  }
-}
+// Menu Styling
+.menushow {
+  background-color: $gray-color;
+  overflow: hidden;
+  text-align: center;
+  .container {
+    padding-right: 0;
+    padding-left: 0;
 
-@include breakPoints(md) {
-  .about {
-    .container {
-      display: block;
-      .content {
-        width: 100%;
-        .head {
-          font-size: 22px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      li.active {
+        background-color: $red-color;
+      }
+    }
+    .cards {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      .card {
+        background-color: $white-color;
+        border-radius: 15px;
+        width: 230px;
+        .img {
+          height: 250px;
+          img {
+            width: 80%;
+            height: 100%;
+          }
         }
         .text {
-          font-size: 18px;
-        }
-      }
-      .img {
-        width: 100%;
-        margin: 20px 0;
-      }
-      .img::before {
-        width: calc(100%);
-        height: calc(100% + 20px);
-        left: 0;
-        top: calc(50% - 3.5px);
-        img {
-          @include center(both);
-        }
-      }
-    }
-  }
-}
-
-@include breakPoints(sm) {
-  .about {
-    .container {
-      .content {
-        .head {
-          font-size: 20px;
-        }
-        .text {
-          font-size: 16px;
-          line-height: 1.7;
-          letter-spacing: 0.3px;
+          margin: 10px;
+          height: 170px;
+          h2 {
+            color: $green-color;
+            font-weight: bold;
+            font-size: 20px;
+            height: 50px;
+            margin-bottom: 20px;
+          }
+          .des {
+            font-size: 16px;
+            height: 45px;
+          }
+          .price {
+            font-weight: bold;
+            padding: 20px;
+          }
         }
       }
     }
@@ -396,6 +375,24 @@ footer {
   }
 }
 
+@include breakPoints(lg) {
+  @include headerContainerPadding(37.5px 75px);
+}
+
+@include breakPoints(md) {
+  @include headerContainerPadding(25px);
+
+  header {
+    .dropmenu {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+}
+
 @include breakPoints(sm) {
   footer {
     padding: 30px 10px;
@@ -416,6 +413,64 @@ footer {
         ul,
         address {
           margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include breakPoints(lg) {
+  .about .container .content {
+    .head {
+      font-size: 25px;
+    }
+    .text {
+      font-size: 20px;
+    }
+  }
+}
+
+@include breakPoints(md) {
+  .about {
+    .container {
+      display: block;
+      .content {
+        width: 100%;
+        .head {
+          font-size: 22px;
+        }
+        .text {
+          font-size: 18px;
+        }
+      }
+      .img {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .img::before {
+        width: calc(100%);
+        height: calc(100% + 20px);
+        left: 0;
+        top: calc(50% - 3.5px);
+        img {
+          @include center(both);
+        }
+      }
+    }
+  }
+}
+
+@include breakPoints(sm) {
+  .about {
+    .container {
+      .content {
+        .head {
+          font-size: 20px;
+        }
+        .text {
+          font-size: 16px;
+          line-height: 1.7;
+          letter-spacing: 0.3px;
         }
       }
     }
