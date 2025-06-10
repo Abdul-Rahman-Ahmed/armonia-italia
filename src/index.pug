@@ -6,11 +6,19 @@ html(lang="ar" dir="rtl")
     header
       .container
         +header(mainPath)
-    main.container(role="main")
-      p
-        | مرحباً بكم في مطعمنا الإيطالي، حيث يجمع 
-        span.typing التقاليد الإيطالية الأصيلة 
-        | مع الطهي الحديث لتقديم تجربة لا تُنسى لمحبي المأكولات الإيطالية.
+    main
+      .container(role="main")
+        p
+          | مرحباً بكم في مطعمنا الإيطالي، حيث يجمع 
+          span.typing التقاليد الإيطالية الأصيلة 
+          | مع الطهي الحديث لتقديم تجربة لا تُنسى لمحبي المأكولات الإيطالية.
+    .about
+      .container
+        .content
+          +heading("نبذة")
+          .text يتميز مطعمنا بأجوائه الدافئة والأنيقة، حيث يقدم تشكيلة متنوعة من الأطباق الإيطالية الشهية بتوقيع شيف مخضرم وفريقه المحترف. تأسس المطعم في عام <span>2002</span> وسرعان ما أصبح وجهة محبوبة لعشاق الطعام في المنطقة.
+          .button(role="button" tabindex="0") للمزيد
+        .img: img(src= mainPath + "/imgs/about.jpg")
     footer
       .container
         +footer(mainPath)

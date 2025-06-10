@@ -24,11 +24,37 @@ body {
 h2 {
   padding: 0 0 20px;
   margin: 0;
+  head {
+    color: $red-color;
+    font-size: 28px;
+  }
 }
 
 a {
   text-decoration: none;
   color: $white-color;
+}
+
+.button {
+  background-color: $green-color;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: $white-color;
+  width: fit-content;
+  cursor: pointer;
+  @include time;
+  &:hover {
+    background-color: $red-color;
+    @include time;
+  }
+}
+
+h2.head {
+  color: $red-color;
+  font-size: 28px;
 }
 
 @include headerContainerPadding(0 100px);
@@ -164,7 +190,7 @@ header {
 // main Styling
 main {
   position: relative;
-  background-image: url(../imgs/main/main3.jpg);
+  background-image: url(../imgs/main/main1.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100dvh;
@@ -183,7 +209,7 @@ main {
   }
 
   @include breakPoints(md) {
-    background-image: url(../imgs/main/main-3.jpg);
+    background-image: url(../imgs/main/main1.jpg);
 
     p {
       text-align: center;
@@ -196,6 +222,108 @@ main {
     p {
       @include center("both");
       width: 100%;
+    }
+  }
+}
+
+// About Styling
+.about {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    .img {
+      width: 50%;
+      text-align: center;
+      position: relative;
+      z-index: 0;
+      img {
+        width: 95%;
+      }
+    }
+    .img::before {
+      content: "";
+      background-color: $gold-color;
+      border-radius: 10px;
+      width: 80px;
+      left: -15px;
+      @include center(y);
+      z-index: -1;
+      height: calc(100% + 40px);
+    }
+
+    .content {
+      width: 50%;
+      .text {
+        font-size: 22px;
+        text-align: justify;
+        padding-bottom: 20px;
+        span {
+          color: $red-color;
+        }
+      }
+    }
+  }
+}
+
+@include breakPoints(lg) {
+  .about .container .content {
+    .head {
+      font-size: 25px;
+    }
+    .text {
+      font-size: 20px;
+    }
+  }
+}
+
+@include breakPoints(md) {
+  .about {
+    .container {
+      display: block;
+      .content {
+        width: 100%;
+        .head {
+          font-size: 22px;
+        }
+        .text {
+          font-size: 18px;
+        }
+      }
+      .img {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .img::before {
+        width: calc(100%);
+        height: calc(100% + 20px);
+        left: 0;
+        top: calc(50% - 3.5px);
+        img {
+          @include center(both);
+        }
+      }
+    }
+  }
+}
+
+@include breakPoints(sm) {
+  .about {
+    .container {
+      .content {
+        .head {
+          font-size: 20px;
+        }
+        .text {
+          font-size: 16px;
+          line-height: 1.7;
+          letter-spacing: 0.3px;
+        }
+      }
     }
   }
 }

@@ -31,6 +31,9 @@ mixin head (title, path)
     link(rel="preload", href= path + "/imgs/logo.png", as="image")
     title #{title}
 
+mixin heading (text)
+  h2.head - #{text} -
+
 mixin footer (path)
   .cont
     .footer-sections
