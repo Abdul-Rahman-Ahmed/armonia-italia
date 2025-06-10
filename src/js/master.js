@@ -3,7 +3,7 @@ const appetizers = [
     name: "بروشيتا بالطماطم والريحان",
     des: "خبز محمص مع زيتون وثوم وطماطم وزيت زيتون.",
     price: "80 ج.م",
-    src: "/imgs/dishes/Appetizers/Bruschetta.png",
+    src: "./imgs/dishes/Appetizers/Bruschetta.png",
   },
   {
     name: "أرانشيني (كرات الأرز المحشية)",
