@@ -1,0 +1,10 @@
+include ../helpers/pug/mixins.pug
+doctype html
+html(lang="ar" dir="rtl")  
+  +head("About", pagesPath)
+  body
+    header.container
+      +header(pagesPath)
+    footer.container.footer
+      +footer(pagesPath)
+  script(src="/js/main.js")

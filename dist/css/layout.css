@@ -59,6 +59,10 @@ h2.head {
   font-size: 28px;
 }
 
+.page {
+  padding-top: 77px;
+}
+
 .container {
   padding: 50px 100px;
 }
@@ -191,11 +195,16 @@ header nav ul li a:hover {
 
 main {
   position: relative;
-  background-image: url(../imgs/main/main1.jpg);
+  background-image: url(../imgs/main/main3.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100dvh;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  main {
+    background-image: url(../imgs/main/main-3.jpg);
+  }
 }
 main p {
   position: absolute;
@@ -214,17 +223,11 @@ main p span {
   color: #228b22;
 }
 @media (max-width: 768px) {
-  main {
-    background-image: url(../imgs/main/main1.jpg);
-  }
   main p {
     text-align: center;
   }
 }
 @media (max-width: 576px) {
-  main {
-    background-image: url(../imgs/main/small.png);
-  }
   main p {
     position: absolute;
     top: 50%;

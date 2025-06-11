@@ -57,6 +57,9 @@ h2.head {
   font-size: 28px;
 }
 
+.page {
+  padding-top: 77px;
+}
 @include headerContainerPadding(50px 100px);
 
 // header
@@ -170,11 +173,17 @@ header {
 // main Styling
 main {
   position: relative;
-  background-image: url(../imgs/main/main1.jpg);
+  background-image: url(../imgs/main/main3.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100dvh;
   font-weight: 600;
+
+  @include breakPoints(md) {
+    & {
+      background-image: url(../imgs/main/main-3.jpg);
+    }
+  }
 
   p {
     @include center("y");
@@ -189,7 +198,7 @@ main {
   }
 
   @include breakPoints(md) {
-    background-image: url(../imgs/main/main1.jpg);
+    // background-image: url(../imgs/main/main1.jpg);
 
     p {
       text-align: center;
@@ -197,7 +206,7 @@ main {
   }
 
   @include breakPoints(sm) {
-    background-image: url(../imgs/main/small.png);
+    // background-image: url(../imgs/main/small.png);
 
     p {
       @include center("both");
