@@ -446,6 +446,81 @@ main p span {
   transition: 0.3s;
 }
 
+.testimonials .head {
+  text-align: center;
+}
+.testimonials .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+.testimonials .cards .card {
+  position: relative;
+  width: 300px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.testimonials .cards .card .person-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 10px;
+}
+.testimonials .cards .card .person-info .img {
+  aspect-ratio: 3/4;
+  height: 180px;
+}
+.testimonials .cards .card .person-info .img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  height: 100%;
+}
+.testimonials .cards .card .person-info h3 {
+  color: #bf0a30;
+  text-align: center;
+  padding: 0;
+}
+.testimonials .cards .card .content {
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+.testimonials .cards .card::before {
+  content: ",,";
+  font-weight: bold;
+  font-size: 150px;
+  position: absolute;
+  bottom: -65px;
+  right: -25px;
+  color: #228b22;
+}
+.testimonials .cards .card::after {
+  content: ",,";
+  position: absolute;
+  left: -25px;
+  top: -60px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  font-size: 150px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
 footer {
   background-color: #333;
   color: #fff;

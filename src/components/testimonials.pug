@@ -1,0 +1,12 @@
+- let clients = [{name:"ماركو روسي", content: "الأكل كان لذيذًا والخدمة ممتازة. بالتأكيد سأعود مرة أخرى.", img: "client1.png"}, {name: "ماتيو مارتيني", content: " أفضل مطعم إيطالي في المدينة! أحببت الأجواء والطعام كان رائعًا.", img: "client2.png"}, {name: "إليسا رينالدي", content: "خدمة ممتازة وطعام لذيذ. يستحق الزيارة بالتأكيد.", img: "client3.png"}]
+
+.testimonials
+  .container
+    +heading("اراء الزوار")
+    .cards
+      each client in clients
+        .card
+          .person-info
+            .img: img(src="./imgs/clients/" + client.img)
+            h3.name= client.name
+          .content= client.content

@@ -374,6 +374,72 @@ main {
   }
 }
 
+// testimonials
+.testimonials {
+  .head {
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .card {
+      position: relative;
+      width: 300px;
+      background-color: $gray-color;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+      .person-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        .img {
+          aspect-ratio: 3 / 4;
+          height: 180px;
+          img {
+            object-fit: cover;
+            border-radius: 10px;
+            height: 100%;
+          }
+        }
+        h3 {
+          color: $red-color;
+          text-align: center;
+          padding: 0;
+        }
+      }
+      .content {
+        font-style: italic;
+        line-height: 1.6;
+        text-align: center;
+      }
+    }
+    .card::before {
+      content: ",,";
+      font-weight: bold;
+      font-size: 150px;
+      position: absolute;
+      bottom: -65px;
+      right: -25px;
+      color: $green-color;
+    }
+    .card::after {
+      content: ",,";
+      position: absolute;
+      left: -25px;
+      top: -60px;
+      transform: rotate(180deg);
+      font-size: 150px;
+      font-weight: bold;
+      color: $gold-color;
+    }
+  }
+}
+
 // Footer Styling
 footer {
   background-color: #333;
