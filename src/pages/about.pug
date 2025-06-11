@@ -3,8 +3,44 @@ doctype html
 html(lang="ar" dir="rtl")  
   +head("About", pagesPath)
   body
-    header.container
-      +header(pagesPath)
-    footer.container.footer
-      +footer(pagesPath)
+    header
+      .container
+        +header(pagesPath)
+    .aboutPage.page
+        .container
+          +heading("من نحن") 
+          p.lead
+            | مطعم أرمونيا إيطاليا يجمع بين الطابع الإيطالي الأصيل واللمسة العصرية لنقدم لكم تجربة طعام فريدة من نوعها.
+      
+          .about-content
+            .section
+              h3 رسالتنا
+              p
+                | تقديم أطباق عالية الجودة باستخدام مكونات طازجة، مع خدمة استثنائية تُشعر الضيف وكأنه في بيته.
+      
+            .section
+              h3 رؤيتنا
+              p
+                | أن نكون الوجهة الأولى لعشاق المطبخ الإيطالي في منطقتنا، وأن نقدم تجربة طعام لا تُنسى.
+      
+            .section
+              h3 قيمنا
+              ul
+                li الجودة والاهتمام بالتفاصيل
+                li الترحيب والضيافة الأصيلة
+                li الابتكار في تقديم الأطباق
+                li المسؤولية تجاه المجتمع والبيئة
+      
+          .team
+            h3 فريق العمل
+            .team-members
+              each member in [{name: "أحمد علاء", role: "المدير التنفيذي", src: "boss"}, {name: "سارة مصطفى", role: "شيف متخصص", src: "chef"}, {name: "مروان يوسف", role: "خدمة العملاء",src: "waiter"}]
+                .member
+                  img(src=`../imgs/${member.src}.jpg`, alt=member.name)
+                  h4= member.name
+                  p= member.role
+
+    footer
+      .container.footer
+        +footer(pagesPath)
   script(src="../js/main.js")

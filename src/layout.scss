@@ -477,6 +477,10 @@ main {
       li {
         padding: 5px 0;
         margin: 10px 0;
+        i {
+          margin-left: 10px;
+          color: $green-color;
+        }
       }
     }
     .map-container {
@@ -630,9 +634,6 @@ main {
         }
 
         ul {
-          list-style: none;
-          padding: 0;
-
           li {
             margin-bottom: 15px;
 
@@ -652,6 +653,93 @@ main {
             border: none;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(#000, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// about page styling
+.aboutPage {
+  background-image: url("../imgs/team.jpg");
+  background-size: cover;
+  .container {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #eeeeee88;
+
+    .lead {
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+
+      .section {
+        margin-bottom: 40px;
+        padding: 10px;
+        width: 300px;
+        background-color: $white-color;
+        border-radius: 15px;
+        box-shadow: #00000099 0 0 10px;
+
+        h3 {
+          color: $green-color;
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+
+        p,
+        ul {
+          color: #000;
+          font-size: 1rem;
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .team {
+      h3 {
+        color: $green-color;
+        margin-bottom: 30px;
+      }
+
+      .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+
+        .member {
+          padding: 20px;
+          background-color: #222222;
+          width: 250px;
+          text-align: center;
+
+          img {
+            width: 200px;
+            aspect-ratio: 1;
+            border-radius: 100px;
+            margin-bottom: 10px;
+            border: 3px solid $red-color;
+          }
+
+          h4 {
+            margin: 10px 0 5px;
+            color: $green-color;
+          }
+
+          p {
+            color: $white-color;
+            font-size: 0.9rem;
           }
         }
       }

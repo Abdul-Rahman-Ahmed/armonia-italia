@@ -563,6 +563,10 @@ main p span {
   padding: 5px 0;
   margin: 10px 0;
 }
+.contact .contact-info ul li i {
+  margin-left: 10px;
+  color: #228b22;
+}
 .contact .contact-info .map-container {
   width: 50%;
   height: 300px;
@@ -718,10 +722,6 @@ main p span {
   color: #228b22;
   margin-bottom: 20px;
 }
-.contactPage .container .contact-content .contact-info ul {
-  list-style: none;
-  padding: 0;
-}
 .contactPage .container .contact-content .contact-info ul li {
   margin-bottom: 15px;
 }
@@ -739,6 +739,92 @@ main p span {
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.aboutPage {
+  background-image: url("../imgs/team.jpg");
+  background-size: cover;
+}
+.aboutPage .container {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: rgba(238, 238, 238, 0.5333333333);
+}
+.aboutPage .container .lead {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+.aboutPage .container .about-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.aboutPage .container .about-content .section {
+  margin-bottom: 40px;
+  padding: 10px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 10px;
+          box-shadow: rgba(0, 0, 0, 0.6) 0 0 10px;
+}
+.aboutPage .container .about-content .section h3 {
+  color: #228b22;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.aboutPage .container .about-content .section p,
+.aboutPage .container .about-content .section ul {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+.aboutPage .container .team h3 {
+  color: #228b22;
+  margin-bottom: 30px;
+}
+.aboutPage .container .team .team-members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+.aboutPage .container .team .team-members .member {
+  padding: 20px;
+  background-color: #222222;
+  width: 250px;
+  text-align: center;
+}
+.aboutPage .container .team .team-members .member img {
+  width: 200px;
+  aspect-ratio: 1;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  border: 3px solid #bf0a30;
+}
+.aboutPage .container .team .team-members .member h4 {
+  margin: 10px 0 5px;
+  color: #228b22;
+}
+.aboutPage .container .team .team-members .member p {
+  color: #fff;
+  font-size: 0.9rem;
 }
 
 footer {
