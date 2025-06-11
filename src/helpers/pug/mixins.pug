@@ -49,6 +49,21 @@ mixin map
   .map-container
     iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2382.861675272914!2d31.20537407735465!3d30.0541788695238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1719263310357!5m2!1sar!2seg",style="border: 0",allowfullscreen="",loading="lazy",referrerpolicy="no-referrer-when-downgrade" title="موقع المطعم على الخريطة")
 
+mixin galary (num, path)
+  .galary-container
+    - for(let i= 1; i <= num; i++)
+      .img
+        img(src=path + "/imgs/galary/chef" + i + ".png" alt="طباخ المطعم")
+        h2 طباخ المطعم
+      .img
+        img(src=path + "/imgs/galary/food" + i + ".png" alt="طعامنا")
+        h2 طعامنا
+      .img
+        img(src=path + "/imgs/galary/kitchen" + i + ".png" alt="مطبخنا")
+        h2 مطبخنا 
+      .img
+        img(src=path + "/imgs/galary/rest" + i + ".png" alt="مطعمنا")
+        h2 مطعمنا
 mixin footer (path)
   .cont
     .footer-sections

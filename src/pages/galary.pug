@@ -3,8 +3,14 @@ doctype html
 html(lang="ar" dir="rtl")  
   +head("Galary", pagesPath)
   body
-    header.container
-      +header(pagesPath)
-    footer.container.footer
-      +footer(pagesPath)
+    header
+      .container
+        +header(pagesPath)
+    .galary.page 
+      .container
+        +heading("المعرض")
+        +galary(5, "..")
+    footer
+      .container.footer
+        +footer(pagesPath)
   script(src="/js/main.js")

@@ -1,18 +1,5 @@
 .galary
   .container
     +heading("المعرض")
-    .galary-container
-      - for(let i= 1; i <= 2; i++)
-        .img
-          img(src="./imgs/galary/chef" + i + ".png" alt="طباخ المطعم")
-          h2 طباخ المطعم
-        .img
-          img(src="./imgs/galary/food" + i + ".png" alt="طعامنا")
-          h2 طعامنا
-        .img
-          img(src="./imgs/galary/kitchen" + i + ".png" alt="مطبخنا")
-          h2 مطبخنا 
-        .img
-          img(src="./imgs/galary/rest" + i + ".png" alt="مطعمنا")
-          h2 مطعمنا
+    +galary(2,".")
     a.button للمزيد
