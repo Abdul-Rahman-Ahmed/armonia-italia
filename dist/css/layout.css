@@ -549,6 +549,7 @@ main p span {
 }
 .contact .contact-info ul li {
   padding: 5px 0;
+  margin: 10px 0;
 }
 .contact .contact-info .map-container {
   width: 50%;
