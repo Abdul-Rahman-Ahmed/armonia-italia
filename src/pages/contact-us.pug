@@ -3,8 +3,47 @@ doctype html
 html(lang="ar" dir="rtl")  
   +head("Contact Us", pagesPath)
   body
-    header.container
-      +header(pagesPath)
-    footer.container.footer
-      +footer(pagesPath)
-  script(src="/js/main.js")
+    header
+      .container
+        +header(pagesPath)
+    .contactPage.page
+      .container
+        +heading("تواصل معنا")
+        p.intro
+          | نسعد بتواصلك معنا سواء لطرح استفسار، أو حجز خاص، أو ملاحظاتك لتحسين خدمتنا.
+
+        .contact-content
+          form(action="/contact-submit", method="POST")
+            .inputContainer
+              label(for="name") الاسم الكامل
+              input#name(type="text", required, placeholder="ادخل اسمك الكامل")
+
+            .inputContainer
+              label(for="email") البريد الإلكتروني
+              input#email(type="email", required, placeholder="example@email.com")
+
+            .inputContainer
+              label(for="message") رسالتك
+              textarea#message(rows="6", required, placeholder="اكتب رسالتك هنا")
+
+            .button-container
+              button.button(type="submit") إرسال
+
+          .contact-info
+            h3 معلومات التواصل
+            ul
+              li
+                i.fas.fa-map-marker-alt
+                | شارع البطل أحمد عبدالعزيز، المهندسين، الجيزة
+              li
+                i.fas.fa-phone
+                | 0103854127
+              li
+                i.fas.fa-envelope
+                | armonia-italia@gmail.com
+            +map
+
+    footer
+      .container.footer
+        +footer(pagesPath)
+  script(src="../js/main.js")
