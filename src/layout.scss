@@ -307,6 +307,29 @@ main {
   }
 }
 
+// Booking Styling
+.booking {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../imgs/booking.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  .container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: $white-color;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
 // Footer Styling
 footer {
   background-color: #333;
