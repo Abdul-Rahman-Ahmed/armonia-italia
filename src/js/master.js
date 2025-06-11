@@ -155,8 +155,6 @@ const show = (num, type) => {
   });
 };
 
-show(4, appetizers);
-
 const typesMap = {
   appetizers,
   main,
