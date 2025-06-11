@@ -17,7 +17,7 @@ html(lang="ar" dir="rtl")
         .content
           +heading("نبذة")
           .text يتميز مطعمنا بأجوائه الدافئة والأنيقة، حيث يقدم تشكيلة متنوعة من الأطباق الإيطالية الشهية بتوقيع شيف مخضرم وفريقه المحترف. تأسس المطعم في عام <span>2002</span> وسرعان ما أصبح وجهة محبوبة لعشاق الطعام في المنطقة.
-          .button(role="button" tabindex="0") للمزيد
+          a.button(role="button" tabindex="0" href="./pages/about.html") للمزيد
         .img: img(src= mainPath + "/imgs/about.jpg")
     include ./components/menu.pug
     include ./components/booking.pug
