@@ -3,8 +3,49 @@ doctype html
 html(lang="ar" dir="rtl")  
   +head("Booking", pagesPath)
   body
-    header.container
-      +header(pagesPath)
-    footer.container.footer
-      +footer(pagesPath)
-  script(src="/js/main.js")
+    header
+      .container
+        +header(pagesPath)
+    .bookingPage.page
+      .container
+        form(action="/submit" method="POST") 
+          h2 احجز طاولتك الآن
+          .inputs
+            .inputContainer
+              label(for="full-name") الاسم الكامل
+              input#full-name(type="text" placeholder="برجاء إدخال الاسم بالكامل" required)
+
+            .inputContainer
+              label(for="telephone") رقم الهاتف
+              input#telephone(type="tel" placeholder="برجاء إدخال رقم الهاتف" required)
+
+            .inputContainer
+              label(for="email") البريد الإلكتروني
+              input#email(type="email" placeholder="برجاء إدخال البريد الإلكتروني" required)
+
+            .inputContainer
+              label(for="numbers") عدد الأشخاص
+              select#numbers(required)
+                option(value="") اختر من فضلك
+                each val in [1,2,3,4,5,6,7,8,9,10]
+                  option(value=val)= val
+
+            .inputContainer
+              label(for="date") التاريخ
+              input#date(type="date" required)
+
+            .inputContainer
+              label(for="time") الوقت
+              input#time(type="time" required)
+  
+            .inputContainer
+              label(for="notes") ملاحظات إضافية
+              textarea#notes(placeholder="ملاحظات" rows="5")
+
+          .button-container
+            .button(type="submit") احجز الآن
+        +map
+    footer
+      .container.footer
+        +footer(pagesPath)
+  script(src="../js/main.js")
