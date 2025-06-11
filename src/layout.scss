@@ -374,7 +374,7 @@ main {
   }
 }
 
-// testimonials
+// testimonials Styling
 .testimonials {
   .head {
     text-align: center;
@@ -391,6 +391,10 @@ main {
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      &:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+      }
 
       .person-info {
         display: flex;
@@ -436,6 +440,48 @@ main {
       font-size: 150px;
       font-weight: bold;
       color: $gold-color;
+    }
+  }
+}
+
+// Contact Styling
+.contact {
+  background-color: $gray-color;
+  .head,
+  p {
+    text-align: center;
+    padding: 0;
+  }
+  .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    ul {
+      width: 50%;
+      li {
+        padding: 5px 0;
+      }
+    }
+    .map-container {
+      width: 50%;
+      height: 300px;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@include breakPoints(md) {
+  .contact {
+    .contact-info {
+      display: block;
+      ul,
+      .map-container {
+        margin-bottom: 20px;
+        width: 100%;
+      }
     }
   }
 }
