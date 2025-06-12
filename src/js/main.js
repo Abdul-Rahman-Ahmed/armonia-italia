@@ -16,7 +16,7 @@ links.forEach((el) => {
   let element = el.childNodes[0];
   element.classList.remove("active");
   let item = element.getAttribute("data-type");
-  item == "/"
+  item == "/armonia-italia/dist/"
     ? href == item && element.classList.add("active")
     : href.includes(item) && element.classList.add("active");
 });
