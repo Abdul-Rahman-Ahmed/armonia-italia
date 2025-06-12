@@ -56,6 +56,14 @@
   transition: 0.3s;
 }
 
+@mixin flex($wrap, $gap, $align, $justify) {
+  display: flex;
+  gap: $gap;
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
 // Components
 @mixin headerContainerPadding($padding, $fontSize: null) {
   .container {

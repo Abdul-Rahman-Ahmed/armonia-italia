@@ -1,7 +1,7 @@
 include ./helpers/pug/mixins.pug
 doctype html
 html(lang="ar" dir="rtl")  
-  +head("Armonia Italia", mainPath)
+  +head("Armonia Italia", mainPath, "master")
   body
     header
       .container
@@ -27,5 +27,8 @@ html(lang="ar" dir="rtl")
     footer
       .container
         +footer(mainPath)
-    script(src="./js/main.js")
-    script show(4, appetizers);
+    script(type="module" src="./js/main.js")
+    script(type="module").
+      import {appetizers, show } from "../js/menu.js";
+      show(4, appetizers); 
+

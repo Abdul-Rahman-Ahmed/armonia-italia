@@ -1,7 +1,7 @@
 include ../helpers/pug/mixins.pug
 doctype html
 html(lang="ar" dir="rtl")  
-  +head("Booking", pagesPath)
+  +head("Booking", pagesPath, "booking")
   body
     header
       .container
@@ -43,7 +43,7 @@ html(lang="ar" dir="rtl")
               textarea#notes(placeholder="ملاحظات" rows="5")
 
           .button-container
-            .button(type="submit") احجز الآن
+            .button(type="submit" role="button" tabindex="0") احجز الآن
         +map
     footer
       .container.footer

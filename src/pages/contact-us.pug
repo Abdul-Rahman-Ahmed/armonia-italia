@@ -1,7 +1,7 @@
 include ../helpers/pug/mixins.pug
 doctype html
 html(lang="ar" dir="rtl")  
-  +head("Contact Us", pagesPath)
+  +head("Contact Us", pagesPath, "contact-us")
   body
     header
       .container
@@ -27,7 +27,7 @@ html(lang="ar" dir="rtl")
               textarea#message(rows="6", required, placeholder="اكتب رسالتك هنا")
 
             .button-container
-              button.button(type="submit") إرسال
+              button.button(type="submit" role="button" tabindex="0") إرسال
 
           .contact-info
             h3 معلومات التواصل

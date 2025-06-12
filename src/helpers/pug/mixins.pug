@@ -1,28 +1,29 @@
 include ./variables.pug
 
 mixin links (path)
-  li: a(href= path + "/") الرئيسية
-  li: a(href= path + "/pages/menu.html") القائمة
-  li: a(href= path + "/pages/booking.html") الحجز
-  li: a(href= path + "/pages/galary.html") المعرض
-  li: a(href= path + "/pages/contact-us.html") اتصل بنا
-  li: a(href= path + "/pages/about.html") عن الموقع
+  li: a(data-type="/" href= path + "/") الرئيسية
+  li: a(data-type= "menu" href= path + "/pages/menu.html") القائمة
+  li: a(data-type= "booking" href= path + "/pages/booking.html") الحجز
+  li: a(data-type= "galary" href= path + "/pages/galary.html") المعرض
+  li: a(data-type= "contact-us" href= path + "/pages/contact-us.html") اتصل بنا
+  li: a(data-type= "about" href= path + "/pages/about.html") عن الموقع
 
 mixin header (path) 
   .logo: a(href= path + "/"): img(src= path + "/imgs/logo.png")
-  .dropmenu: div: i.fa-solid.fa-bars(role="button")
+  .dropmenu: div: i.fa-solid.fa-bars(role="button" tabindex="0")
   .overlay
-    button.close(aria-label="إغلاق القائمة", type="button") X 
+    button.close(aria-label="إغلاق القائمة", type="button" role="button" tabindex="0") X 
     ul.menu
       +links(path)
   nav(aria-label="القائمة الرئيسية"): ul
     +links(path)
 
-mixin head (title, path)
+mixin head (title, path, style)
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href= path + "/css/layout.css")
+    link(rel="stylesheet", href= path + `/css/pages/${style}.css`)
+    link(rel="stylesheet", href= path + "/css/main.css")
     link(rel="stylesheet", href= path + "/css/all.min.css")
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
@@ -38,11 +39,11 @@ mixin heading (text)
 mixin menu
   +heading("القائمة")
   ul
-    li.button.active(data-type="appetizers") المقبلات
-    li.button(data-type="main") الأطباق الرئيسية
-    li.button(data-type="pizza") البيتزا
-    li.button(data-type="deserts") الحلويات
-    li.button(data-type="drinks") المشروبات
+    li.button.active(role="button" tabindex="0" data-type="appetizers") المقبلات
+    li.button(role="button" tabindex="0" data-type="main") الأطباق الرئيسية
+    li.button(role="button" tabindex="0" data-type="pizza") البيتزا
+    li.button(role="button" tabindex="0" data-type="deserts") الحلويات
+    li.button(role="button" tabindex="0" data-type="drinks") المشروبات
   .cards
 
 mixin map 
@@ -64,6 +65,7 @@ mixin galary (num, path)
       .img
         img(src=path + "/imgs/galary/rest" + i + ".png" alt="مطعمنا")
         h2 مطعمنا
+
 mixin footer (path)
   .cont
     .footer-sections

@@ -40,21 +40,30 @@ task("html", () => {
 });
 
 task("css", () => {
-  return src("src/layout.scss")
-    .pipe(map.init())
-    .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(prefixer("last 2 versions"))
-    .pipe(map.write("."))
-    .pipe(dest("dist/css"))
-    .pipe(notify({ message: "CSS Task Is Successful", onLast: true }))
-    .pipe(connect.reload());
+  return (
+    src("src/main.scss")
+      .pipe(map.init())
+      .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+      .pipe(prefixer("last 2 versions"))
+      .pipe(map.write("."))
+      .pipe(dest("dist/css"))
+      .pipe(notify({ message: "CSS Task Is Successful", onLast: true }))
+      .pipe(connect.reload()),
+    src("src/scss/pages/*.scss")
+      .pipe(map.init())
+      .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+      .pipe(prefixer("last 2 versions"))
+      .pipe(map.write("."))
+      .pipe(dest("dist/css/pages"))
+      .pipe(notify({ message: "CSS Page Task Is Successful", onLast: true }))
+      .pipe(connect.reload())
+  );
 });
 
 task("js", () => {
   return src("src/js/*.js")
     .pipe(map.init())
     .pipe(uglify())
-    .pipe(concat("main.js"))
     .pipe(map.write("."))
     .pipe(dest("dist/js"))
     .pipe(notify({ message: "JS Task Is Successful", onLast: true }))

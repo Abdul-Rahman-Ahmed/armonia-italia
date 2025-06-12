@@ -1,4 +1,4 @@
-const appetizers = [
+export const appetizers = [
   {
     name: "بروشيتا بالطماطم والريحان",
     des: "خبز محمص مع زيتون وثوم وطماطم وزيت زيتون.",
@@ -133,7 +133,15 @@ const drinks = [
   },
 ];
 
-const show = (num, type) => {
+const typesMap = {
+  appetizers,
+  main,
+  pizza,
+  deserts,
+  drinks,
+};
+
+export const show = (num, type) => {
   const container = document.querySelector(".menushow .cards");
   container.innerHTML = "";
   let url = window.location.href;
@@ -155,16 +163,9 @@ const show = (num, type) => {
   });
 };
 
-const typesMap = {
-  appetizers,
-  main,
-  pizza,
-  deserts,
-  drinks,
-};
-
 const menunav = document.querySelectorAll(".menushow ul li");
 let currentType = "appetizers";
+
 menunav.forEach((el) => {
   el.addEventListener("click", () => {
     menunav.forEach((item) => item.classList.remove("active"));
@@ -172,18 +173,10 @@ menunav.forEach((el) => {
     const newType = el.getAttribute("data-type");
     if (currentType === newType) return;
     currentType = newType;
-    show(4, typesMap[newType]);
+    window.location.pathname.includes("pages")
+      ? show(10, typesMap[newType])
+      : show(4, typesMap[newType]);
   });
 });
 
-const dropMenu = document.querySelector(".dropmenu");
-const overlay = document.querySelector(".overlay");
-const closeBtn = document.querySelector(".close");
-
-dropMenu.addEventListener("click", () => {
-  overlay.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-  overlay.classList.remove("active");
-});
+window.show = show;

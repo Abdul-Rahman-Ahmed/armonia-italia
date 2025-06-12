@@ -1,7 +1,7 @@
 include ../helpers/pug/mixins.pug
 doctype html
 html(lang="ar" dir="rtl")  
-  +head("Menu", pagesPath)
+  +head("Menu", pagesPath, "menu")
   body
     header
       .container
@@ -12,6 +12,8 @@ html(lang="ar" dir="rtl")
     footer
       .container.footer
         +footer(pagesPath)
-    script(src="../js/main.js")
-    script show(4, appetizers);
+    script(src="../js/main.js" type="module")
+    script(type="module").
+      import {appetizers } from "../js/menu.js";
+      show(8, appetizers); 
 

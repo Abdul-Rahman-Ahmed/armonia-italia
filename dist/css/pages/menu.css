@@ -1,0 +1,73 @@
+.menushow {
+  background-color: #eee;
+  overflow: hidden;
+  text-align: center;
+}
+.menushow .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.menushow .container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.menushow .container ul li.active {
+  background-color: #bf0a30;
+}
+.menushow .container .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+.menushow .container .cards .card {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 230px;
+}
+.menushow .container .cards .card .img {
+  height: 250px;
+}
+.menushow .container .cards .card .img img {
+  width: 80%;
+  height: 100%;
+}
+.menushow .container .cards .card .text {
+  margin: 10px;
+  height: 170px;
+}
+.menushow .container .cards .card .text h2 {
+  color: #228b22;
+  font-weight: bold;
+  font-size: 20px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.menushow .container .cards .card .text .des {
+  font-size: 16px;
+  height: 45px;
+}
+.menushow .container .cards .card .text .price {
+  font-weight: bold;
+  padding: 20px;
+}
+/*# sourceMappingURL=menu.css.map */

@@ -1,0 +1,351 @@
+@use "../../../src/helpers/sass/variables" as *;
+@use "../../../src/helpers/sass/mixin" as *;
+
+// main Styling
+main {
+  position: relative;
+  background-image: url(../../imgs/main/main3.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
+  font-weight: 600;
+
+  @include breakPoints(md) {
+    & {
+      background-image: url(../../imgs/main/main-3.jpg);
+    }
+  }
+
+  p {
+    @include center("y");
+    color: $red-color;
+    font-size: clamp(30px, 4vw, 35px);
+    width: 48%;
+    text-align: justify;
+
+    span {
+      color: $green-color;
+    }
+  }
+
+  @include breakPoints(md) {
+    p {
+      text-align: center;
+    }
+  }
+
+  @include breakPoints(sm) {
+    p {
+      @include center("both");
+      width: 100%;
+    }
+  }
+}
+
+// About Styling
+.about {
+  .container {
+    @include flex(nowrap, 20px, center, space-between);
+    .img {
+      width: 50%;
+      text-align: center;
+      position: relative;
+      z-index: 0;
+      img {
+        width: 95%;
+      }
+    }
+    .img::before {
+      content: "";
+      background-color: $gold-color;
+      border-radius: 10px;
+      width: 80px;
+      left: -15px;
+      @include center(y);
+      z-index: -1;
+      height: calc(100% + 40px);
+    }
+
+    .content {
+      width: 50%;
+      .text {
+        font-size: 22px;
+        text-align: justify;
+        padding-bottom: 20px;
+        span {
+          color: $red-color;
+        }
+      }
+      @include breakPoints(lg) {
+        & {
+          .head {
+            font-size: 25px;
+          }
+          .text {
+            font-size: 20px;
+          }
+        }
+      }
+      @include breakPoints(sm) {
+        .content {
+          .head {
+            font-size: 20px;
+          }
+          .text {
+            font-size: 16px;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+          }
+        }
+      }
+    }
+    @include breakPoints(md) {
+      & {
+        display: block;
+        .content {
+          width: 100%;
+          .head {
+            font-size: 22px;
+          }
+          .text {
+            font-size: 18px;
+          }
+        }
+        .img {
+          width: 100%;
+          margin: 20px 0;
+        }
+        .img::before {
+          width: calc(100%);
+          height: calc(100% + 20px);
+          left: 0;
+          top: calc(50% - 3.5px);
+          img {
+            @include center(both);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Menu Styling
+.menushow {
+  background-color: $gray-color;
+  overflow: hidden;
+  text-align: center;
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+
+    ul {
+      @include flex(wrap, 20px, center, center);
+      li.active {
+        background-color: $red-color;
+      }
+    }
+    .cards {
+      @include flex(wrap, 20px, normal, center);
+      padding: 20px;
+      .card {
+        background-color: $white-color;
+        border-radius: 15px;
+        width: 230px;
+        .img {
+          height: 250px;
+          img {
+            width: 80%;
+            height: 100%;
+          }
+        }
+        .text {
+          margin: 10px;
+          height: 170px;
+          h2 {
+            color: $green-color;
+            font-weight: bold;
+            font-size: 20px;
+            height: 50px;
+            margin-bottom: 20px;
+          }
+          .des {
+            font-size: 16px;
+            height: 45px;
+          }
+          .price {
+            font-weight: bold;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Booking Styling
+.booking {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../imgs/booking.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  .container {
+    height: 300px;
+    @include flex(nowrap, 0, center, center);
+    flex-direction: column;
+
+    p {
+      color: $white-color;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Galary Styling
+.galary {
+  background-color: $gray-color;
+  text-align: center;
+  .galary-container {
+    @include flex(wrap, 5px, normal, center);
+    padding-bottom: 20px;
+    .img {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 1;
+      height: 220px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      h2 {
+        background-color: rgba($red-color, 0.8);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        color: $white-color;
+        @include flex(nowrap, 0, center, center);
+        font-size: 1.3rem;
+        @include time();
+        user-select: none;
+      }
+    }
+    .img:hover h2 {
+      opacity: 1;
+      @include time();
+    }
+  }
+}
+
+// testimonials Styling
+.testimonials {
+  .head {
+    text-align: center;
+  }
+  .cards {
+    @include flex(wrap, 30px, normal, center);
+    .card {
+      position: relative;
+      width: 300px;
+      background-color: $gray-color;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      &:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+      }
+
+      .person-info {
+        @include flex(nowrap, 0, center, center);
+        margin-bottom: 10px;
+        .img {
+          aspect-ratio: 3 / 4;
+          height: 180px;
+          img {
+            object-fit: cover;
+            border-radius: 10px;
+            height: 100%;
+          }
+        }
+        h3 {
+          color: $red-color;
+          text-align: center;
+          padding: 0;
+        }
+      }
+      .content {
+        font-style: italic;
+        line-height: 1.6;
+        text-align: center;
+      }
+    }
+    .card::before {
+      content: ",,";
+      font-weight: bold;
+      font-size: 150px;
+      position: absolute;
+      bottom: -65px;
+      right: -25px;
+      color: $green-color;
+    }
+    .card::after {
+      content: ",,";
+      position: absolute;
+      left: -25px;
+      top: -60px;
+      transform: rotate(180deg);
+      font-size: 150px;
+      font-weight: bold;
+      color: $gold-color;
+    }
+  }
+}
+
+// Contact Styling
+.contact {
+  background-color: $gray-color;
+  .head,
+  p {
+    text-align: center;
+    padding: 0;
+  }
+  .contact-info {
+    @include flex(nowrap, 5px, center, normal);
+
+    ul {
+      width: 50%;
+      li {
+        padding: 5px 0;
+        margin: 10px 0;
+        i {
+          margin-left: 10px;
+          color: $green-color;
+        }
+      }
+    }
+    .map-container {
+      width: 50%;
+      height: 300px;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    @include breakPoints(md) {
+      & {
+        display: block;
+        ul,
+        .map-container {
+          margin-bottom: 20px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
